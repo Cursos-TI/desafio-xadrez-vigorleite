@@ -1,32 +1,65 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+// Escrito por Igor Leite da Silva
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+int main (){
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    // Variáveis
+    // numX - Usados para a entrada do usuário para quantas vezes a peça se moverá
+    // a e b - São variaveis de contagem para o while e do-while para controle e finalizar o loop
+    int numBispo, numTorre, numRainha, numCavalo;
+    int a = 0, b = 0;
+    
+    // Exibição do menu e entrada do usuário
+    printf ("-- Movimentacao de Pecas de Xadrez --\n");
+    printf ("Escolaha quantas vezes cada peca se movera\n");
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    // Bispo
+    // While - Comando simples que gera um loop até que a condição, nesse caso (a != numBispo), seja falso
+    printf ("\nMovimentacao do Bispo: ");
+    scanf ("%d", &numBispo);
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    while (a != numBispo){
+        printf ("Diagonal superior direita\n");
+        a++; // Variável de controle do loop
+    }
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    // Torre
+    // Do-while - Comando de loop como o while, mas com a diferença q o programa sempre inicia e depois entra no loop
+    printf ("\nMovimentacao da Torre: ");
+    scanf ("%d", &numTorre);
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    do {
+        printf ("Direita\n");
+        b++; // Variável de controle do loop
+    } while (b != numTorre);
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    // Rainha
+    // For - E um loop mais complexo, porem muito útio quando se tem um valor de repetição já estabelecido
+    printf ("\nMovimentacao da Rainha: ");
+    scanf ("%d", &numRainha);
 
+    for (int i=1; i <= numRainha; i++){ // A contagem pode acontecer inteiramente dentro do for
+        printf ("Esquerda\n");
+    }
+
+    // Nível Aventureiro
+
+    // Cavalo
+    // Loop aninhados - Aqui tem um loop dentro de outro loop
+    // Utilizei dois "For", tanto por identação quando por praticidade
+    printf ("\nMovimentacao da Cavalo: ");
+    scanf ("%d", &numCavalo);
+
+    for (int i=1; i<=numCavalo; i++){ // Loop externo
+        for (int j=1; j<=2; j++){ // Loop interno
+            printf ("Cima\t");
+        }
+        printf ("Direita\n");
+    }
+
+    // Fim
     return 0;
 }
